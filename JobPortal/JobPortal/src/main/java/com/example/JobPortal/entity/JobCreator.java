@@ -18,7 +18,7 @@ public class JobCreator {
 	
 	private String Email;
 	
-	private String password;
+	private String Password;
 	
 	private String PhoneNumber;
 	
@@ -42,12 +42,12 @@ public class JobCreator {
 		this.id = id;
 	}
 
-	public String getEName() {
+	public String getName() {
 		return Name;
 	}
 
-	public void setEName(String eName) {
-		Name = eName;
+	public void setName(String name) {
+		Name = name;
 	}
 
 	public String getEmail() {
@@ -59,11 +59,11 @@ public class JobCreator {
 	}
 
 	public String getPassword() {
-		return password;
+		return Password;
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.Password = password;
 	}
 
 	public String getEPhoneNumber() {

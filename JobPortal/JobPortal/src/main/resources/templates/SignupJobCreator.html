@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Job Rickle Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Job Rickle</h2>
+        <form th:action="@{/Landuppage}" method="post" th:object="${item}">
+            <div class = "form-group">
+                <label for="Name">Name</label>
+                <input type="text" th:field="*{Name}" class ="form-control" id = "Name" placeholder ="Enter name" name = "Name" required>
+
+                <div class = "form-group">
+                    <label for="CompanyName">Company Name</label>
+                    <input for = "CompanyName" th:field="*{CompanyName}" class ="form-control" id = "CompanyName" placeholder ="Enter name" name = "CompanyName" required>
+            
+                    <div class="form-group">
+                <label for="Email">Email:</label>
+                <input type="email" th:field="*{Email}" class="form-control" id="Email" placeholder="Enter email" name="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="Password">Password:</label>
+                <input type="password" th:field="*{Password}" class="form-control" id="Password" placeholder="Enter password" name="Password" required>
+            </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
