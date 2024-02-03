@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<form th:object="${item}" method="post" th:action="@{/CreateJob}">
+  <label for="Name">Name:</label><br>
+  <input th:field="${Name}" type="text" id="Name" name="Name" required><br>
+  
+  <label for="Email">Email:</label><br>
+  <input th:field="${Email}"type="email" id="Email" name="Email" required><br>
+  
+  <label for="PhoneNumber">Phone Number:</label><br>
+  <input th:field="${PhoneNumber}"type="text" id="PhoneNumber" name="PhoneNumber" required><br>
+  
+  <label for="CompanyName">Company Name:</label><br>
+  <input th:field="${CompanyName}"type="text" id="CompanyName" name="CompanyName" required><br>
+  
+  <label for="Jobrole">Job Role:</label><br>
+  <input th:field="${Jobrole}"type="text" id="Jobrole" name="Jobrole" required><br>
+  
+  <label for="JobDescription">Job Description:</label><br>
+  <input th:field="${JobDescription}"type="text" id="JobDescription" name="JobDescription" required><br>
+
+  <label for="skills1"> Skill 1:</label><br>
+    <input th:field="${skills1}"type="text" id="skills1" name="skills1" required/><br>
+
+    <label for="skills2"> Skill 2:</label><br>
+    <input th:field="${skills2}"type="text" id="skills2" name="skills2" required/><br>
+
+    <label for="skills3"> Skill 3:</label><br>
+    <input th:field="${skills3}"type="text" id="skills3" name="skills3" required/><br>
+
+    <label for="skills4"> Skill 4:</label><br>
+    <input th:field="${skills4}"type="text" id="skills4" name="skills4" required/><br>
+
+    <label for="skills5"> Skill 5:</label><br>
+    <input th:field="${skills5}"type="text" id="skills5" name="skills5" required/><br>
+    
+    <label for="image"> Upload logo</label>
+    <input type="file" id="image" name="image" requried>
+
+
+  <br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>

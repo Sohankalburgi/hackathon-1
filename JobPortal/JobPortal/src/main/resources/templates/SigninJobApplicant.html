@@ -7,10 +7,10 @@
 <body>
     <div class="container">
         <h2> Job Rickle Login</h2>
-        <form th:action="@{/Landuppage}" method="post" th:object="${item}">
+        <form th:action="@{/SigninJobApplicant}" method="post" th:object="${item}">
             <div class="form-group">
                 <label for="Email">Email:</label>
-                <input type	="email" class="form-control" th:field="*{Email}" id="Email" placeholder="Enter email" name="Email" required>
+                <input type	="text" class="form-control" th:field="*{Email}" id="Email" placeholder="Enter email" name="Email" required>
             </div>
             <div class="form-group">
                 <label for="Password">Password:</label>

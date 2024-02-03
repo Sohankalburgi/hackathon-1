@@ -24,7 +24,15 @@ public class JobCreator {
 	
 	private String CompanyName;
 	
+	private String Jobrole;
+	
 	private String JobDescription;
+	
+	private String skills1;
+	private String skills2;
+	private String skills3;
+	private String skills4;
+	private String skills5;
 	
 	@Lob
 	@Column(columnDefinition = "MEDIUMBLOB")
@@ -113,6 +121,55 @@ public class JobCreator {
 	public void setAboutCompany(String aboutCompany) {
 		this.aboutCompany = aboutCompany;
 	}
+
+	public String getPhoneNumber() {
+		return PhoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		PhoneNumber = phoneNumber;
+	}
+
+	public String getSkills1() {
+		return skills1;
+	}
+
+	public void setSkills1(String skills1) {
+		this.skills1 = skills1;
+	}
+
+	public String getSkills2() {
+		return skills2;
+	}
+
+	public void setSkills2(String skills2) {
+		this.skills2 = skills2;
+	}
+
+	public String getSkills3() {
+		return skills3;
+	}
+
+	public void setSkills3(String skills3) {
+		this.skills3 = skills3;
+	}
+
+	public String getSkills4() {
+		return skills4;
+	}
+
+	public void setSkills4(String skills4) {
+		this.skills4 = skills4;
+	}
+
+	public String getSkills5() {
+		return skills5;
+	}
+
+	public void setSkills5(String skills5) {
+		this.skills5 = skills5;
+	}
+	
 	
 	
 }
