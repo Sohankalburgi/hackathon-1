@@ -36,26 +36,20 @@ public class JobCreatorServices {
 		return jobcreatorrepo.findAll();
 	}
 	
-	public void savetoJobcreate(MultipartFile file, String name,String email,String Phone,String companyname,
+	public void savetoJobcreate( String name,String email,String Phone,String companyname,
 			String Jobrole,String JobDescription,String skills1,String skills2,String skills3,String skills4,String skills5)
 	{
 		JobCreator jobcreator = jobcreatorrepo.findByEmailIgnoreCase(email);
-		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-		if(fileName.contains(".."))
-		{
-			System.out.println("not a a valid file");
-		}
-		try {
-			jobcreator.setImage(Base64.getEncoder().encodeToString(file.getBytes()));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 		jobcreator.setName(name);
 		jobcreator.setJobDescription(JobDescription);
 		jobcreator.setPhoneNumber(Phone);
 		jobcreator.setSkills1(skills1);
 		jobcreator.setSkills2(skills2);
-		job
+		jobcreator.setSkills3(skills3);
+		jobcreator.setSkills4(skills4);
+		jobcreator.setSkills5(skills5);
+		jobcreator.setJobrole(Jobrole);
 		
 		
 		jobcreatorrepo.save(jobcreator);

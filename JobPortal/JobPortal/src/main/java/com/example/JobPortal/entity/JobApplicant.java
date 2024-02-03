@@ -14,8 +14,10 @@ public class JobApplicant {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
-	private String Name;
+	private Integer jobid;
 	
+	private String Name;
+	@jakarta.validation.constraints.Email
 	private String Email;
 	
 	private String Password;
@@ -36,10 +38,7 @@ public class JobApplicant {
 	
 	private String technicalSkills5;
 	
-	@Lob
-	@Column(columnDefinition = "MEDIUMBLOB")
-	private String image;
-
+	
 	public Integer getId() {
 		return id;
 	}
@@ -128,13 +127,25 @@ public class JobApplicant {
 		this.technicalSkills5 = technicalSkills5;
 	}
 
-	public String getImage() {
-		return image;
+	public Integer getJobid() {
+		return jobid;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setJobid(Integer jobid) {
+		this.jobid = jobid;
 	}
+
+	public String getLinkedIn() {
+		return LinkedIn;
+	}
+
+	public void setLinkedIn(String linkedIn) {
+		LinkedIn = linkedIn;
+	}
+	
+	
+	
+
 	
 	
 	

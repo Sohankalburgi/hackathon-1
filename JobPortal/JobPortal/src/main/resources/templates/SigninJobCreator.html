@@ -1,22 +1,108 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Internshala</title>
+    <title>Job Rickle Login</title>
+    <style>
+        body{
+            background-image: url("C:\Users\sneha\Downloads\WhatsApp Image 2024-02-03 at 8.13.37 PM.jpeg");
+            background-size: cover;
+        }
+        button{
+            position: absolute;
+            left: 25%;
+            width: 50%;
+    
+        }
+        h1{
+            background-color: silver;
+          }
+            .top_bar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                background-color: #f8f9fa;
+            }
+            .top_bar img {
+                height: 40px;
+            }
+            .top_bar h1 {
+                margin: 0;
+                font-size: 24px;
+            }
+            .top_bar h2, .top_bar h3 {
+                margin: 0;
+                font-size: 18px;
+                color: #6c757d;
+            }
+            .top_bar a {
+                text-decoration: none;
+                color: #6c757d;
+            }
+            .top_bar a:hover {
+                color: #007bff;
+            }
+            .login-form {
+                width: 400px;
+                margin: 50px auto;
+            }
+            .login-form .form-group {
+                margin-bottom: 20px;
+            }
+            .login-form .form-control {
+                border-radius: 0;
+            }
+            .login-form .btn {
+                background-color: #007bff;
+                color: white;
+                border-radius: 0;
+            }
+            .login-form .btn:hover {
+                background-color: #0056b3;
+            }
+            #one{
+                font-size: 20pt;
+            }
+            #two{
+                font-size: 15pt;
+            }
+            button{
+                
+                background-color: #007bff;
+            }
+    
+            #two:hover{
+                background-color: coral;
+            }
+    </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
+    <header class="top_bar">
+        <img src="images.jpeg" alt="logo" width="100px" height="100px">
+        <h1>JOB RICKLE</h1>
+    </header>
     <div class="container">
+
         <h2>Job Rickle</h2>
-        <form th:action="@{/SigninJobCreator}" method="post" th:object="${item}">
-            <div class="form-group">
+        <form th:action="@{/SignupJobCreator}" method="post" th:object="${item}">
+            <div class = "form-group">
+                <label for="Name">Name</label>
+                <input type="text" th:field="*{Name}" class ="form-control" id = "Name" placeholder ="Enter name" name = "Name" required>
+
+                <div class = "form-group">
+                    <label for="CompanyName">Company Name</label>
+                    <input for = "CompanyName" th:field="*{CompanyName}" class ="form-control" id = "CompanyName" placeholder ="Enter name" name = "CompanyName" required>
+            
+                    <div class="form-group">
                 <label for="Email">Email:</label>
-                <input type	="text" class="form-control" th:field="*{Email}" id="Email" placeholder="Enter email" name="Email" required>
+                <input type="email" th:field="*{Email}" class="form-control" id="Email" placeholder="Enter email" name="Email" required>
             </div>
             <div class="form-group">
                 <label for="Password">Password:</label>
-                <input type="password" class="form-control" th:field="*{Password}" id="Password" placeholder="Enter password" name="Password" required>
+                <input type="password" th:field="*{Password}" class="form-control" id="Password" placeholder="Enter password" name="Password" required>
             </div>
-            
+
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

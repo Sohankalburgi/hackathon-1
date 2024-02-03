@@ -14,6 +14,7 @@ public class JobCreator {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
+	
 	private String Name;
 	
 	private String Email;
@@ -34,13 +35,8 @@ public class JobCreator {
 	private String skills4;
 	private String skills5;
 	
-	@Lob
-	@Column(columnDefinition = "MEDIUMBLOB")
-	private String image;
 	
-	private String SkillsNeeded;
 	
-	private String aboutCompany;
 
 	public Integer getId() {
 		return id;
@@ -98,30 +94,10 @@ public class JobCreator {
 		JobDescription = jobDescription;
 	}
 
-	public String getImage() {
-		return image;
-	}
+	
 
-	public void setImage(String image) {
-		this.image = image;
-	}
 
-	public String getSkillsNeeded() {
-		return SkillsNeeded;
-	}
-
-	public void setSkillsNeeded(String skillsNeeded) {
-		SkillsNeeded = skillsNeeded;
-	}
-
-	public String getAboutCompany() {
-		return aboutCompany;
-	}
-
-	public void setAboutCompany(String aboutCompany) {
-		this.aboutCompany = aboutCompany;
-	}
-
+	
 	public String getPhoneNumber() {
 		return PhoneNumber;
 	}
@@ -169,6 +145,16 @@ public class JobCreator {
 	public void setSkills5(String skills5) {
 		this.skills5 = skills5;
 	}
+
+	public String getJobrole() {
+		return Jobrole;
+	}
+
+	public void setJobrole(String jobrole) {
+		Jobrole = jobrole;
+	}
+	
+	
 	
 	
 	
