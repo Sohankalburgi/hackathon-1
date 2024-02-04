@@ -209,11 +209,11 @@ public class Controllers {
 		list.add(jobcreated.getSkills5().toLowerCase());
 		
 		ArrayList<String> list1 = new ArrayList<>();
-		list.add(jobapp.getTechnicalSkills1().toLowerCase());
-		list.add(jobapp.getTechnicalSkills2().toLowerCase());
-		list.add(jobapp.getTechnicalSkills3().toLowerCase());
-		list.add(jobapp.getTechnicalSkills4().toLowerCase());
-		list.add(jobapp.getTechnicalSkills5().toLowerCase());
+		list1.add(jobapp.getTechnicalSkills1().toLowerCase());
+		list1.add(jobapp.getTechnicalSkills2().toLowerCase());
+		list1.add(jobapp.getTechnicalSkills3().toLowerCase());
+		list1.add(jobapp.getTechnicalSkills4().toLowerCase());
+		list1.add(jobapp.getTechnicalSkills5().toLowerCase());
 		
 		for(String skill : list1)
 		{
