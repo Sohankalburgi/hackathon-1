@@ -215,9 +215,9 @@ public class Controllers {
 		list.add(jobapp.getTechnicalSkills4().toLowerCase());
 		list.add(jobapp.getTechnicalSkills5().toLowerCase());
 		
-		for(String skill : list)
+		for(String skill : list1)
 		{
-			if(!list1.contains(skill)) {
+			if(!list.contains(skill)) {
 				return new ModelAndView("Noteligible");
 			}
 		}
