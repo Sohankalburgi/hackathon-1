@@ -2,6 +2,7 @@ package com.example.JobPortal.Controllers;
 
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -117,18 +118,13 @@ public class Controllers {
 	{
 		JobApplicant jobapplicant = jobApplicantservice.getJobApplicant(jobapp.getEmail());
 		
-		if(jobapplicant==null) {
-			System.out.println("please create an account");
-		}
 		
-		if(jobapplicant.getPassword().equals(jobapp.getPassword()))
-		{
+		
 			System.out.println("successful login");
 			RedirectView rd = new RedirectView();
 			rd.setUrl("Landuppage");
 			return new ModelAndView(rd);
-		}
-		return new ModelAndView("error");
+		
 		
 	}
 	
@@ -191,9 +187,11 @@ public class Controllers {
 	@PostMapping(path="/Apply")
 	public ModelAndView setApplyPage(@RequestParam("Name") String name,@RequestParam("Email") String email,@RequestParam("LinkedIn") String Linkedin,
 			@RequestParam("PhoneNumber")String Phone,@RequestParam("skills1")String skills1,@RequestParam("skills2") String skills2,
-			@RequestParam("skills3")String skills3,@RequestParam("skills4") String skills4,@RequestParam("skills5")String skills5,@ModelAttribute("About")String about) {
+			@RequestParam("skills3")String skills3,@RequestParam("skills4") String skills4,@RequestParam("skills5")String skills5,@ModelAttribute("About")String about,@RequestParam("jobid") Integer jobid) {
 		JobApplicant jobapp = new JobApplicant();
+		JobCreator jobcreated = jobcreatorservice.getByid(jobid);
 		jobapp.setEmail(email);
+		jobapp.setName(name);
 		jobapp.setLinkedIn(Linkedin);
 		jobapp.setTechnicalSkills1(skills1);
 		jobapp.setTechnicalSkills2(skills2);
@@ -202,9 +200,32 @@ public class Controllers {
 		jobapp.setTechnicalSkills5(skills5);
 		jobapp.setPhoneNumber(Phone);
 		jobapp.setAbout(about);
+		jobapp.setJobid(jobid);
+		ArrayList<String> list = new ArrayList<>();
+		list.add(jobcreated.getSkills1().toLowerCase());
+		list.add(jobcreated.getSkills2().toLowerCase());
+		list.add(jobcreated.getSkills3().toLowerCase());
+		list.add(jobcreated.getSkills4().toLowerCase());
+		list.add(jobcreated.getSkills5().toLowerCase());
+		
+		ArrayList<String> list1 = new ArrayList<>();
+		list.add(jobapp.getTechnicalSkills1().toLowerCase());
+		list.add(jobapp.getTechnicalSkills2().toLowerCase());
+		list.add(jobapp.getTechnicalSkills3().toLowerCase());
+		list.add(jobapp.getTechnicalSkills4().toLowerCase());
+		list.add(jobapp.getTechnicalSkills5().toLowerCase());
+		
+		for(String skill : list)
+		{
+			if(!list1.contains(skill)) {
+				return new ModelAndView("Noteligible");
+			}
+		}
 		jobApplicantservice.createApplicant(jobapp);
 		return new ModelAndView("successful");
+		
 	}
+	
 	
 	
 }

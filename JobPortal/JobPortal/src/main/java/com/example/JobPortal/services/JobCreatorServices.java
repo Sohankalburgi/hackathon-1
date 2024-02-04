@@ -55,4 +55,7 @@ public class JobCreatorServices {
 		jobcreatorrepo.save(jobcreator);
 	}
 	
+	public JobCreator getByid(Integer id) {
+		return jobcreatorrepo.getById(id);
+	}
 }
